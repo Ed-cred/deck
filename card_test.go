@@ -63,7 +63,7 @@ func TestJokers(t *testing.T) {
 func TestFilter(t *testing.T) {
 	filter := func(card Card) bool {
 		return card.Rank == Two || card.Rank == Three
-	}	
+	}
 	cards := New(Filter(filter))
 	for _, card := range cards {
 		if card.Rank == Two || card.Rank == Three {
@@ -74,7 +74,7 @@ func TestFilter(t *testing.T) {
 
 func TestDeck(t *testing.T) {
 	numDecks := 3
-	cards := New(Deck(numDecks))	
+	cards := New(Deck(numDecks))
 	if len(cards) != 13*4*numDecks {
 		t.Errorf("Expected %d cards, got %d", 13*4*numDecks, len(cards))
 	}
@@ -92,6 +92,4 @@ func TestShuffle(t *testing.T) {
 	if cards[1] != second {
 		t.Errorf("Expected second card to be %v, got %v", second, cards[1])
 	}
-
-
 }

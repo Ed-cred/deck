@@ -92,13 +92,14 @@ func absRank(c Card) int {
 }
 
 var shuffleRand = rand.New(rand.NewSource(time.Now().Unix()))
+
 func Shuffle(cards []Card) []Card {
-		ret := make([]Card, len(cards))
-		perm := shuffleRand.Perm(len(cards))
-		for i, j := range perm {
-			ret[i] = cards[j]
-		}
-		return ret
+	ret := make([]Card, len(cards))
+	perm := shuffleRand.Perm(len(cards))
+	for i, j := range perm {
+		ret[i] = cards[j]
+	}
+	return ret
 }
 
 // Jokers lets you pass in the number of Jokers you want in your deck
